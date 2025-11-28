@@ -468,6 +468,46 @@ body[data-theme="light"] .tech-strip {
 .now-grid {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
+/* Sertifikalar grid */
+.certs-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+/* Sertifika kartları */
+.cert-card-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.cert-provider {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 6px;
+}
+
+.cert-year {
+    font-size: 0.8rem;
+    color: var(--muted);
+    padding: 2px 8px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+}
+
+.cert-link {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 0.8rem;
+    text-decoration: underline;
+    color: #93c5fd;
+}
+
+body[data-theme="light"] .cert-link {
+    color: #2563eb;
+}
+
 
 /* Kartlar */
 .card {
