@@ -5,24 +5,40 @@
     <title>Şimşek - Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <!-- JS dosyamız -->
     <script src="script.js" defer></script>
 </head>
 <body data-theme="dark">
+    <!-- Müzik için ses kaynağı -->
+    <!-- NOT: /music/ klasörüne kendi mp3'ünü ekleyip src'yi ona göre değiştir -->
+    <audio id="bg-music" src="https://www.youtube.com/watch?v=p7ZsBPK656s&list=PPSV" loop></audio>
+
+    <!-- Back to top butonu -->
+    <button id="back-to-top" aria-label="Yukarı dön">↑</button>
+
+    <!-- Sabit müzik player -->
+    <div class="music-player">
+        <button id="music-toggle" class="music-btn" aria-label="Müziği oynat/durdur">▶</button>
+        <div class="music-info">
+            <span class="music-label">Şu an çalıyor:</span>
+            <span class="music-title">Senin seçtiğin şarkı 🎧</span>
+        </div>
+    </div>
+
     <header class="site-header">
         <div class="header-left">
             <div class="badge">⚡ Junior Developer in progress</div>
             <h1 class="site-title">Şimşek</h1>
-            <p class="site-subtitle">Yazılım Mühendisliği Öğrencisi • Web & Algoritmalar</p>
+            <p class="site-subtitle">Yazılım Mühendisliği Öğrencisi • Web & Algoritmalar • CS Temeli</p>
         </div>
 
         <div class="header-right">
-            <nav>
-                <a href="#hero" class="active">Ana Sayfa</a>
-                <a href="#skills">Yetenekler</a>
-                <a href="#timeline">Timeline</a>
-                <a href="#projects">Projeler</a>
-                <a href="#contact">İletişim</a>
+            <nav id="site-nav">
+                <a href="#hero" class="nav-link active">Ana Sayfa</a>
+                <a href="#now" class="nav-link">Şu An</a>
+                <a href="#skills" class="nav-link">Yetenekler</a>
+                <a href="#timeline" class="nav-link">Timeline</a>
+                <a href="#projects" class="nav-link">Projeler</a>
+                <a href="#contact" class="nav-link">İletişim</a>
             </nav>
 
             <button id="theme-toggle" class="theme-toggle" aria-label="Tema değiştir">
@@ -32,20 +48,22 @@
     </header>
 
     <main>
-        <!-- HERO / INTRO -->
+        <!-- HERO -->
         <section id="hero" class="hero reveal">
             <div class="hero-text">
                 <p class="hero-overline">Merhaba, ben</p>
                 <h2 class="hero-title">Şimşek</h2>
+
                 <p class="hero-typing-line">
                     <span id="typing-static">Ben bir </span>
                     <span id="typing-text"></span>
                     <span class="typing-cursor">|</span>
                 </p>
+
                 <p class="hero-description">
-                    Temiz kod, sağlam temel ve gerçekçi projelerle kendimi geliştirmeye çalışan
-                    bir yazılım mühendisliği öğrencisiyim. Web geliştirme, algoritmalar ve veri yapıları
-                    en çok vakit harcadığım alanlar.
+                    Temiz kod, güçlü temel ve gerçek projelerle ilerlemeye çalışan bir yazılım mühendisliği öğrencisiyim.
+                    Web geliştirme, veri yapıları ve algoritmalar üzerine yoğunlaşıyorum. Eğreti değil, oturmuş bir bilgi
+                    birikimi peşindeyim.
                 </p>
 
                 <div class="hero-actions">
@@ -53,11 +71,19 @@
                     <a href="#contact" class="btn secondary">İletişime Geç</a>
                 </div>
 
-                <div class="chips">
-                    <span class="chip">HTML • CSS • JS</span>
-                    <span class="chip">Python</span>
-                    <span class="chip">Veri Yapıları</span>
-                    <span class="chip">Git & GitHub</span>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">3.</span>
+                        <span class="stat-label">Sınıf</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Mini Proje</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label">Deneme / Hata</span>
+                    </div>
                 </div>
             </div>
 
@@ -66,8 +92,56 @@
                     <span class="hero-initials">Ş</span>
                 </div>
                 <p class="hero-tagline">
-                    “İlerlemek zorunda değilsin, ama ben ilerlemeyi seçiyorum.”
+                    “İlerlemek zorunda değilsin ama ben ilerlemeyi seçiyorum.”
                 </p>
+
+                <div class="tech-strip">
+                    <span class="tech-label">Tech stack:</span>
+                    <div class="tech-items">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JS</span>
+                        <span>Python</span>
+                        <span>Git</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ŞU AN NE YAPIYORUM -->
+        <section id="now" class="section reveal">
+            <h3 class="section-title">Şu An Ne Yapıyorum?</h3>
+            <p class="section-subtitle">
+                Dağınık çalışmak yerine, odaklı gitmeye çalışıyorum. Şu an gündemimde olan konular:
+            </p>
+
+            <div class="grid now-grid">
+                <article class="card">
+                    <h4>Güncel Odak</h4>
+                    <ul>
+                        <li>GitHub Pages ile kişisel portfolio'yu oturtmak</li>
+                        <li>Frontend temelini güçlendirmek (HTML/CSS/JS)</li>
+                        <li>Yazılım mühendisliği dersleri ile paralel ilerlemek</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h4>Tekrar & Derinleşme</h4>
+                    <ul>
+                        <li>Veri yapıları: stack, queue, tree, AVL</li>
+                        <li>Algoritmalar: arama, sıralama, karmaşıklık analizi</li>
+                        <li>Derslerde zorlandığım konulara geri dönmek</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h4>Hedef</h4>
+                    <ul>
+                        <li>CV + GitHub + Portfolio üçlüsünü düzgün hale getirmek</li>
+                        <li>Staj / iş başvurularına hazırlık</li>
+                        <li>İleride yurt dışı yüksek lisans opsiyonlarını açık tutmak</li>
+                    </ul>
+                </article>
             </div>
         </section>
 
@@ -75,13 +149,13 @@
         <section id="skills" class="section reveal">
             <h3 class="section-title">Yetenekler</h3>
             <p class="section-subtitle">
-                Temelini sağlam tutmaya çalıştığım teknolojiler ve konseptler.
+                Temelini sağlam kurmaya çalıştığım teknolojiler ve konular.
             </p>
 
             <div class="grid skills-grid">
                 <article class="card">
                     <h4>Frontend</h4>
-                    <p>Web arayüzlerini kurcalamayı seviyorum.</p>
+                    <p>Web arayüzleri, responsive tasarım ve temel etkileşimler.</p>
                     <div class="chips">
                         <span class="chip">HTML5</span>
                         <span class="chip">CSS3</span>
@@ -92,7 +166,7 @@
 
                 <article class="card">
                     <h4>Backend & Genel</h4>
-                    <p>Sunucu tarafı ve genel programlama mantığı.</p>
+                    <p>Programlama mantığı, basit backend fikirleri, scriptler.</p>
                     <div class="chips">
                         <span class="chip">Python</span>
                         <span class="chip">Temel OOP</span>
@@ -101,8 +175,8 @@
                 </article>
 
                 <article class="card">
-                    <h4>CS Temeli</h4>
-                    <p>Okulda & projelerde en çok işime yarayan konular.</p>
+                    <h4>Bilgisayar Bilimi Temeli</h4>
+                    <p>Derslerde ve projelerde en çok işime yarayan kısım.</p>
                     <div class="chips">
                         <span class="chip">Veri Yapıları</span>
                         <span class="chip">Algoritmalar</span>
@@ -111,8 +185,8 @@
                 </article>
 
                 <article class="card">
-                    <h4>Tools</h4>
-                    <p>Her gün elime aldığım araçlar.</p>
+                    <h4>Araçlar</h4>
+                    <p>Her gün elime aldığım ve alışmaya çalıştığım tool'lar.</p>
                     <div class="chips">
                         <span class="chip">Git</span>
                         <span class="chip">GitHub</span>
@@ -127,7 +201,7 @@
         <section id="timeline" class="section reveal">
             <h3 class="section-title">Timeline</h3>
             <p class="section-subtitle">
-                Öğrenme sürecim kabaca aşağıdaki gibi ilerliyor. Her adım hâlâ devam ediyor tabii.
+                Öğrenme sürecimin kısa özeti. Bitmiş değil, devam eden bir süreç.
             </p>
 
             <div class="timeline">
@@ -136,7 +210,7 @@
                     <div class="timeline-content card">
                         <span class="timeline-date">2023 →</span>
                         <h4>Temeller</h4>
-                        <p>Programlamaya giriş, Python ve temel algoritma mantığı. Küçük scriptler ve deneyler.</p>
+                        <p>Programlamaya giriş, Python ile ilk adımlar, algoritma ve mantık egzersizleri.</p>
                     </div>
                 </div>
 
@@ -144,8 +218,8 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content card">
                         <span class="timeline-date">2024 →</span>
-                        <h4>CS Dersleri & Web'e Giriş</h4>
-                        <p>Veri yapıları, diferansiyel denklemlerle kavga, web programlama dersleri ve ilk gerçek web projeleri.</p>
+                        <h4>Dersler & Web'e Giriş</h4>
+                        <p>Veri yapıları, diferansiyel denklemler, web programlama dersleri ve ilk gerçek web projeleri.</p>
                     </div>
                 </div>
 
@@ -153,7 +227,7 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content card">
                         <span class="timeline-date">2025 →</span>
-                        <h4>Portfolio & Kişisel Projeler</h4>
+                        <h4>Portfolio & Odaklanma</h4>
                         <p>GitHub Pages üzerinde bu site, daha derli toplu projeler ve kariyer için temel oluşturma.</p>
                     </div>
                 </div>
@@ -164,35 +238,65 @@
         <section id="projects" class="section reveal">
             <h3 class="section-title">Projeler</h3>
             <p class="section-subtitle">
-                Buraya hem okul projelerini hem de kendi kendine yaptığın projeleri doldurabilirsin.
+                Buraya hem okul projelerini hem de kendi kendine yaptığın işleri koyabilirsin. Aşağıdakiler örnek yapıda.
             </p>
 
             <div class="grid projects-grid">
                 <article class="card project-card">
-                    <h4>Kişisel Portfolio</h4>
-                    <p>GitHub Pages üzerinde yayınlanan, HTML/CSS/JS kullanarak hazırladığım kişisel portfolyo sitesi.</p>
+                    <div class="project-header">
+                        <span class="project-tag">Kişisel Proje</span>
+                        <h4>Kişisel Portfolio</h4>
+                    </div>
+                    <p>GitHub Pages üzerinde yayınlanan, HTML/CSS/JS kullanarak hazırladığım bu kişisel portfolio sitesi.
+                        Tek sayfa layout, tema toggle, animasyonlar ve müzik ile destekli.</p>
                     <div class="chips">
                         <span class="chip">HTML</span>
                         <span class="chip">CSS</span>
                         <span class="chip">Vanilla JS</span>
+                        <span class="chip">GitHub Pages</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="https://github.com/simsekdilara139/simsekdilara139.github.io" target="_blank" class="btn small">
+                            GitHub
+                        </a>
+                        <a href="https://simsekdilara139.github.io" target="_blank" class="btn small ghost">
+                            Live Demo
+                        </a>
                     </div>
                 </article>
 
                 <article class="card project-card">
-                    <h4>Veri Yapıları Çalışma Projeleri</h4>
-                    <p>Stack, queue, tree gibi yapıların hem teorik hem kod üzerinden tekrarını yaptığım küçük projeler.</p>
+                    <div class="project-header">
+                        <span class="project-tag">Çalışma Projesi</span>
+                        <h4>Veri Yapıları Çalışma Serisi</h4>
+                    </div>
+                    <p>Stack, queue, tree, AVL tree gibi yapıların hem teorik hem kod çalışmasını yaptığım küçük projeler
+                        ve notlar.</p>
                     <div class="chips">
                         <span class="chip">Python</span>
                         <span class="chip">DS & Algo</span>
                     </div>
+                    <div class="project-actions">
+                        <a href="#" class="btn small disabled">
+                            GitHub (yakında)
+                        </a>
+                    </div>
                 </article>
 
                 <article class="card project-card">
-                    <h4>Python Küçük Otomasyonlar</h4>
-                    <p>Günlük işleri kolaylaştırmak için yazdığım küçük scriptler ve denemeler.</p>
+                    <div class="project-header">
+                        <span class="project-tag">Mini Otomasyon</span>
+                        <h4>Python Otomasyon Scriptleri</h4>
+                    </div>
+                    <p>Günlük işleri kolaylaştırmak için yazdığım küçük Python scriptleri: dosya düzenleme, basit veri işleme, vb.</p>
                     <div class="chips">
                         <span class="chip">Python</span>
                         <span class="chip">Automation</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="#" class="btn small disabled">
+                            GitHub (yakında)
+                        </a>
                     </div>
                 </article>
             </div>
@@ -202,7 +306,7 @@
         <section id="contact" class="section reveal">
             <h3 class="section-title">İletişim</h3>
             <p class="section-subtitle">
-                Beni proje, iş, soru veya sadece muhabbet için bile yazabilirsin.
+                Proje, staj, iş veya sadece sohbet için bile yazabilirsin.
             </p>
 
             <div class="card contact-card">
@@ -217,14 +321,15 @@
                     </a>
                 </p>
                 <p class="contact-note">
-                    Bu siteyi zamanla güncelleyip yeni projeler eklemeyi planlıyorum. Geri bildirimlerin değerli.
+                    Bu siteyi zamanla güncelleyip hem projeleri hem de notlarımı buraya eklemeyi planlıyorum.
+                    Geri bildirimlerin değerli.
                 </p>
             </div>
         </section>
     </main>
 
     <footer>
-        &copy; 2025 Şimşek. Klasik ama sağlam bir şekilde inşa edildi.
+        &copy; 2025 Şimşek. Klasik temeller + modern dokunuşlarla inşa edildi.
     </footer>
 </body>
 </html>
