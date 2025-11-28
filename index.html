@@ -8,31 +8,8 @@
     <script src="script.js" defer></script>
 </head>
 <body data-theme="dark">
-
-    <body data-theme="dark">
-
-    <!-- Müzik kaynağımız: DİREKT URL -->
-    <audio
-        id="bg-music"
-        src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Broke_For_Free/Directionless_EP/Broke_For_Free_-_01_-_Night_Owl.mp3"
-        loop>
-    </audio>
-
-    <!-- Müzik için ses kaynağı -->
-    <!-- NOT: /music/ klasörüne kendi mp3'ünü ekleyip src'yi ona göre değiştir -->
-    <audio id="bg-music" src="https://www.youtube.com/watch?v=p7ZsBPK656s&list=PPSV" loop></audio>
-
-    <!-- Back to top butonu -->
+    <!-- Yukarı dön butonu -->
     <button id="back-to-top" aria-label="Yukarı dön">↑</button>
-
-    <!-- Sabit müzik player -->
-    <div class="music-player">
-        <button id="music-toggle" class="music-btn" aria-label="Müziği oynat/durdur">▶</button>
-        <div class="music-info">
-            <span class="music-label">Şu an çalıyor:</span>
-            <span class="music-title">Senin seçtiğin şarkı 🎧</span>
-        </div>
-    </div>
 
     <header class="site-header">
         <div class="header-left">
@@ -79,6 +56,7 @@
                 <div class="hero-actions">
                     <a href="#projects" class="btn primary">Projelerime Git</a>
                     <a href="#contact" class="btn secondary">İletişime Geç</a>
+                    <a href="CV.pdf" class="btn secondary" target="_blank">CV’mi İndir (PDF)</a>
                 </div>
 
                 <div class="hero-stats">
@@ -258,7 +236,7 @@
                         <h4>Kişisel Portfolio</h4>
                     </div>
                     <p>GitHub Pages üzerinde yayınlanan, HTML/CSS/JS kullanarak hazırladığım bu kişisel portfolio sitesi.
-                        Tek sayfa layout, tema toggle, animasyonlar ve müzik ile destekli.</p>
+                        Tek sayfa layout, tema toggle ve animasyonlarla destekli.</p>
                     <div class="chips">
                         <span class="chip">HTML</span>
                         <span class="chip">CSS</span>
@@ -298,7 +276,7 @@
                         <span class="project-tag">Mini Otomasyon</span>
                         <h4>Python Otomasyon Scriptleri</h4>
                     </div>
-                    <p>Günlük işleri kolaylaştırmak için yazdığım küçük Python scriptleri: dosya düzenleme, basit veri işleme, vb.</p>
+                    <p>Günlük işleri kolaylaştırmak için yazdığım küçük Python scriptleri: dosya düzenleme, basit veri işleme vb.</p>
                     <div class="chips">
                         <span class="chip">Python</span>
                         <span class="chip">Automation</span>
@@ -308,6 +286,40 @@
                             GitHub (yakında)
                         </a>
                     </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- NOTES / BLOG -->
+        <section id="notes" class="section reveal">
+            <h3 class="section-title">Notlar & Küçük Yazılar</h3>
+            <p class="section-subtitle">
+                Burada ders, proje veya kafama takılan teknik konularla ilgili kısa notlar / yazılar tutmayı planlıyorum.
+            </p>
+
+            <div class="grid">
+                <article class="card">
+                    <h4>Veri Yapıları ile Barışmak</h4>
+                    <p>
+                        Stack, queue, tree, AVL... İlk bakışta korkutucu ama aslında mantığı oturunca her yerde karşına çıkan yapılar.
+                        Buraya zamanla kendi anladığım şekilde özetler ve belki görseller eklemeyi düşünüyorum.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h4>GitHub Pages Deneyimim</h4>
+                    <p>
+                        Bu siteyi sıfırdan kurarken hem HTML/CSS pratik yaptım hem de Git ve GitHub mantığını
+                        daha iyi kavradım. Hatalar, commit mesajları, push/pull derken bayağı el alışıyor.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h4>Gelecek İçin Not</h4>
+                    <p>
+                        Buraya ileride çözdüğüm bir algoritma problemi, hoşuma giden bir makale veya
+                        "bunu da sonunda anladım" dediğim konuları eklemek istiyorum.
+                    </p>
                 </article>
             </div>
         </section>

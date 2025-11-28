@@ -617,6 +617,15 @@ body[data-theme="light"] .card p {
     gap: 8px;
 }
 
+/* Notlar / Blog */
+#notes .card h4 {
+    margin-bottom: 6px;
+}
+
+#notes .card p {
+    line-height: 1.7;
+}
+
 /* Contact */
 .contact-card p {
     margin-bottom: 6px;
@@ -693,54 +702,6 @@ body[data-theme="light"] #back-to-top {
     transform: translateY(-1px);
 }
 
-/* === MÜZİK PLAYER === */
-.music-player {
-    position: fixed;
-    left: 16px;
-    bottom: 18px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 10px;
-    border-radius: 999px;
-    border: 1px solid rgba(148, 163, 184, 0.7);
-    background: rgba(15, 23, 42, 0.9);
-    color: #e5e7eb;
-    font-size: 0.8rem;
-    z-index: 20;
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.9);
-    backdrop-filter: blur(10px);
-}
-
-body[data-theme="light"] .music-player {
-    background: rgba(255, 255, 255, 0.95);
-    color: #111827;
-}
-
-.music-btn {
-    border: none;
-    background: linear-gradient(120deg, var(--accent), #22c55e);
-    color: #0b1120;
-    width: 28px;
-    height: 28px;
-    border-radius: 999px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 6px 18px rgba(79, 70, 229, 0.8);
-}
-
-.music-label {
-    color: var(--muted);
-    margin-right: 4px;
-}
-
-.music-title {
-    font-weight: 500;
-}
-
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
     body {
@@ -768,16 +729,5 @@ body[data-theme="light"] .music-player {
 @media (max-width: 480px) {
     .site-title {
         font-size: 1.8rem;
-    }
-
-    .music-player {
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 14px;
-    }
-
-    #back-to-top {
-        right: 10px;
-        bottom: 60px;
     }
 }

@@ -24,10 +24,6 @@ let themeToggleButton;
 // Back-to-top
 let backToTopButton;
 
-// Müzik
-let musicAudio;
-let musicToggleButton;
-
 document.addEventListener("DOMContentLoaded", () => {
   // HTML'deki elemanları JS tarafında yakalıyoruz
   typingElement = document.getElementById("typing-text");
@@ -36,8 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
   navLinks = document.querySelectorAll(".nav-link");
   themeToggleButton = document.getElementById("theme-toggle");
   backToTopButton = document.getElementById("back-to-top");
-  musicAudio = document.getElementById("bg-music");
-  musicToggleButton = document.getElementById("music-toggle");
 
   // Efektleri başlat
   startTypingEffect();
@@ -45,9 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupThemeToggle();
   setupScrollSpy();
   setupBackToTop();
-  setupMusicPlayer();
 });
-
 
 // === TYPING EFFECT ===
 function startTypingEffect() {
@@ -81,7 +73,6 @@ function startTypingEffect() {
   setTimeout(startTypingEffect, typingSpeed);
 }
 
-
 // === SCROLL REVEAL ===
 function setupScrollReveal() {
   if (!revealElements || revealElements.length === 0) return;
@@ -107,7 +98,6 @@ function setupScrollReveal() {
   revealElements.forEach(el => observer.observe(el));
 }
 
-
 // === THEME TOGGLE ===
 function setupThemeToggle() {
   if (!themeToggleButton) return;
@@ -125,7 +115,6 @@ function setupThemeToggle() {
     themeToggleButton.textContent = next === "dark" ? "🌙" : "☀️";
   });
 }
-
 
 // === SCROLLSPY (hangi section aktif) ===
 function setupScrollSpy() {
@@ -161,7 +150,6 @@ function setActiveNav(id) {
   });
 }
 
-
 // === BACK TO TOP ===
 function setupBackToTop() {
   if (!backToTopButton) return;
@@ -179,29 +167,5 @@ function setupBackToTop() {
       top: 0,
       behavior: "smooth"
     });
-  });
-}
-
-
-// === MÜZİK PLAYER ===
-function setupMusicPlayer() {
-  if (!musicAudio || !musicToggleButton) return;
-
-  let isPlaying = false;
-
-  musicToggleButton.addEventListener("click", async () => {
-    try {
-      if (!isPlaying) {
-        await musicAudio.play();
-        isPlaying = true;
-        musicToggleButton.textContent = "⏸";
-      } else {
-        musicAudio.pause();
-        isPlaying = false;
-        musicToggleButton.textContent = "▶";
-      }
-    } catch (err) {
-      console.warn("Müzik çalınamadı:", err);
-    }
   });
 }
