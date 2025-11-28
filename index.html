@@ -2,49 +2,47 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Şimşek - Kişisel Web Sayfam</title>
+    <title>Şimşek - Ana Sayfa</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 40px auto;
-            line-height: 1.6;
-        }
-        h1 {
-            text-align: center;
-        }
-        .card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 16px;
-            margin-bottom: 16px;
-        }
-    </style>
+    <!-- CSS dosyamız -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Merhaba, ben Şimşek 👋</h1>
+    <header>
+        <h1 class="site-title">Şimşek</h1>
+        <p class="site-subtitle">Yazılım Mühendisi • Öğrenci • Üşenmeyen insan</p>
 
-    <div class="card">
-        <h2>Hakkımda</h2>
-        <p>Yazılım mühendisliği öğrencisiyim. Kod yazmayı, yeni teknolojiler öğrenmeyi ve projeler geliştirmeyi seviyorum.</p>
-    </div>
+        <nav>
+            <a href="index.html" class="active">Ana Sayfa</a>
+            <a href="about.html">Hakkımda</a>
+            <a href="projects.html">Projeler</a>
+            <a href="contact.html">İletişim</a>
+        </nav>
+    </header>
 
-    <div class="card">
-        <h2>İlgi Alanlarım</h2>
-        <ul>
-            <li>Yapay zeka ve makine öğrenmesi</li>
-            <li>Web geliştirme</li>
-            <li>Veri yapıları ve algoritmalar</li>
-        </ul>
-    </div>
+    <main>
+        <div class="card">
+            <h2>Hoş geldin 👋</h2>
+            <p>Bu sayfa, GitHub Pages kullanarak oluşturduğum kişisel web sitemin ana sayfası. Burada kendimle ilgili kısa bilgiler ve diğer sayfalara yönlendirmeler bulacaksın.</p>
+        </div>
 
-    <div class="card">
-        <h2>İletişim</h2>
-        <p>Bana şu mailden ulaşabilirsin: <a href="mailto:ornek@mail.com">ornek@mail.com</a></p>
-    </div>
+        <div class="card">
+            <h2>Şu an ne yapıyorum?</h2>
+            <p>Yazılım mühendisliği öğrencisiyim ve web geliştirme, veri yapıları, algoritmalar gibi konularda kendimi geliştirmeye çalışıyorum. Boş zamanlarımda da projelerle uğraşıyorum.</p>
+        </div>
 
+        <div class="card">
+            <h2>Bu sitede neler var?</h2>
+            <ul>
+                <li><strong>Hakkımda:</strong> Kimim, neleri seviyorum, nelerle uğraşıyorum?</li>
+                <li><strong>Projeler:</strong> Üzerinde çalıştığım veya bitirdiğim projeler.</li>
+                <li><strong>İletişim:</strong> Bana ulaşabileceğin mail vs.</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2025 Şimşek. Tüm hakları saklıdır.
+    </footer>
 </body>
 </html>
-<p>Bu satırı VS Code üzerinden ekledim!</p>
-

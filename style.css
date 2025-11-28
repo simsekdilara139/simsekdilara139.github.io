@@ -1,0 +1,106 @@
+/* Genel ayarlar */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: 40px auto;
+    line-height: 1.6;
+    background-color: #f6f6f6;
+    color: #222;
+}
+
+/* Üst kısım (header + nav) */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.site-title {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+
+.site-subtitle {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Navigasyon menü */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid #ddd;
+    font-size: 0.9rem;
+    color: #333;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+nav a:hover {
+    background-color: #eaeaea;
+    transform: translateY(-1px);
+}
+
+nav a.active {
+    background-color: #333;
+    color: #fff;
+}
+
+/* İçerik alanı */
+main {
+    margin-top: 20px;
+}
+
+/* Kart yapısı */
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 18px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+}
+
+.card h2 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.card ul {
+    margin-left: 18px;
+    margin-top: 6px;
+}
+
+.card li {
+    margin-bottom: 4px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.8rem;
+    color: #777;
+}
+
+a {
+    color: #1f5fbf;
+}
+
+a:hover {
+    text-decoration: underline;
+}
