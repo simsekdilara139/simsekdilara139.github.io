@@ -1,4 +1,4 @@
-// Typing effect cümleleri
+// Typing effect için cümleler
 const typingPhrases = [
   "yazılım mühendisliği öğrencisiyim.",
   "web geliştiricisiyim.",
@@ -29,6 +29,7 @@ let musicAudio;
 let musicToggleButton;
 
 document.addEventListener("DOMContentLoaded", () => {
+  // HTML'deki elemanları JS tarafında yakalıyoruz
   typingElement = document.getElementById("typing-text");
   revealElements = document.querySelectorAll(".reveal");
   sections = document.querySelectorAll("section[id]");
@@ -38,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   musicAudio = document.getElementById("bg-music");
   musicToggleButton = document.getElementById("music-toggle");
 
+  // Efektleri başlat
   startTypingEffect();
   setupScrollReveal();
   setupThemeToggle();
@@ -46,20 +48,26 @@ document.addEventListener("DOMContentLoaded", () => {
   setupMusicPlayer();
 });
 
+
 // === TYPING EFFECT ===
 function startTypingEffect() {
+  if (!typingElement) return;
+
   const currentPhrase = typingPhrases[typingIndex];
 
   if (!isDeleting) {
+    // Yazma
     typingElement.textContent = currentPhrase.slice(0, charIndex + 1);
     charIndex++;
 
     if (charIndex === currentPhrase.length) {
+      // Cümlenin sonuna gelince biraz bekle
       isDeleting = true;
       setTimeout(startTypingEffect, 1200);
       return;
     }
   } else {
+    // Silme
     typingElement.textContent = currentPhrase.slice(0, charIndex - 1);
     charIndex--;
 
@@ -73,9 +81,13 @@ function startTypingEffect() {
   setTimeout(startTypingEffect, typingSpeed);
 }
 
+
 // === SCROLL REVEAL ===
 function setupScrollReveal() {
+  if (!revealElements || revealElements.length === 0) return;
+
   if (!("IntersectionObserver" in window)) {
+    // Eski tarayıcılar için: hepsini direkt göster
     revealElements.forEach(el => el.classList.add("visible"));
     return;
   }
@@ -89,36 +101,35 @@ function setupScrollReveal() {
         }
       });
     },
-    {
-      threshold: 0.15
-    }
+    { threshold: 0.15 }
   );
 
   revealElements.forEach(el => observer.observe(el));
 }
 
+
 // === THEME TOGGLE ===
 function setupThemeToggle() {
   if (!themeToggleButton) return;
 
+  // Sayfa ilk açıldığında buton ikonunu body'deki data-theme'e göre ayarla
+  const body = document.body;
+  const currentTheme = body.getAttribute("data-theme") || "dark";
+  themeToggleButton.textContent = currentTheme === "dark" ? "🌙" : "☀️";
+
   themeToggleButton.addEventListener("click", () => {
-    const body = document.body;
-    const currentTheme = body.getAttribute("data-theme") || "dark";
-    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    const current = body.getAttribute("data-theme") || "dark";
+    const next = current === "dark" ? "light" : "dark";
 
-    body.setAttribute("data-theme", newTheme);
-
-    if (newTheme === "light") {
-      themeToggleButton.textContent = "☀️";
-    } else {
-      themeToggleButton.textContent = "🌙";
-    }
+    body.setAttribute("data-theme", next);
+    themeToggleButton.textContent = next === "dark" ? "🌙" : "☀️";
   });
 }
 
+
 // === SCROLLSPY (hangi section aktif) ===
 function setupScrollSpy() {
-  if (!("IntersectionObserver" in window)) {
+  if (!sections || sections.length === 0 || !("IntersectionObserver" in window)) {
     return;
   }
 
@@ -131,15 +142,15 @@ function setupScrollSpy() {
         }
       });
     },
-    {
-      threshold: 0.5
-    }
+    { threshold: 0.5 }
   );
 
   sections.forEach(section => observer.observe(section));
 }
 
 function setActiveNav(id) {
+  if (!navLinks) return;
+
   navLinks.forEach(link => {
     const href = link.getAttribute("href");
     if (href === `#${id}`) {
@@ -149,6 +160,7 @@ function setActiveNav(id) {
     }
   });
 }
+
 
 // === BACK TO TOP ===
 function setupBackToTop() {
@@ -169,6 +181,7 @@ function setupBackToTop() {
     });
   });
 }
+
 
 // === MÜZİK PLAYER ===
 function setupMusicPlayer() {
